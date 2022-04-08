@@ -1,0 +1,28 @@
+{
+  "name": "mern_shopping_list",
+  "version": "1.0.0",
+  "description": "Sample Shopping List",
+  "main": "server.js",
+  "scripts": {
+    "client-install":"npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js exec babel-node --presets babel-preset-env",
+    "client":"npm start --prefix client",
+    "dev":"concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Brad Traversy",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.4",
+    "babel-preset-env": "^1.7.0",
+    "create-react-app": "^5.0.0",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  }
+}
